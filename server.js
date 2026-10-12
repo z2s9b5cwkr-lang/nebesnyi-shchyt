@@ -6,8 +6,8 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: "*" } });
 const PORT = process.env.PORT || 3000;
-app.use (express.static("."));
-app.get('/", (req, res) => res.sendFile(process.cwd() + "/index.html'));
+app.use(express.static("."));
+app.get("/", (req, res) => res.sendFile(__dirname + "/index.html"));
 
 const regionSeed = [
   ["Волинь",17,26],["Львівщина",18,43],["Закарпаття",13,58],["Івано-Франківщина",22,59],
